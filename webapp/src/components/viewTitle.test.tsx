@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event'
 
 import React from 'react'
 import {Provider as ReduxProvider} from 'react-redux'
-import {mocked} from 'ts-jest/utils'
+import {mocked} from 'jest-mock'
 
 import mutator from '../mutator'
 import {Utils} from '../utils'
@@ -18,6 +18,8 @@ import ViewTitle from './viewTitle'
 
 jest.mock('../mutator')
 jest.mock('../utils')
+jest.mock('draft-js/lib/generateRandomKey', () => () => '123')
+
 const mockedMutator = mocked(mutator, true)
 const mockedUtils = mocked(Utils, true)
 mockedUtils.createGuid.mockReturnValue('test-id')
@@ -29,9 +31,33 @@ beforeAll(() => {
 describe('components/viewTitle', () => {
     const board = TestBlockFactory.createBoard()
     board.id = 'test-id'
-    board.rootId = board.id
-
-    const store = mockStateStore([], {})
+    const state = {
+        users: {
+            boardUsers: {
+                1: {username: 'abc'},
+                2: {username: 'd'},
+                3: {username: 'e'},
+                4: {username: 'f'},
+                5: {username: 'g'},
+            },
+        },
+        teams: {
+            current: {id: 'team-id'},
+        },
+        boards: {
+            current: board.id,
+            boards: {
+                [board.id]: board,
+            },
+            myBoardMemberships: {
+                [board.id]: {userId: 'user_id_1', schemeAdmin: true},
+            },
+        },
+        clientConfig: {
+            value: {},
+        },
+    }
+    const store = mockStateStore([], state)
 
     beforeEach(() => {
         jest.clearAllMocks()
@@ -70,7 +96,7 @@ describe('components/viewTitle', () => {
     })
 
     test('show description', async () => {
-        board.fields.showDescription = true
+        board.showDescription = true
         let container
         await act(async () => {
             const result = render(wrapIntl(
@@ -86,11 +112,11 @@ describe('components/viewTitle', () => {
         expect(container).toMatchSnapshot()
         const hideDescriptionButton = screen.getAllByRole('button')[0]
         userEvent.click(hideDescriptionButton)
-        expect(mockedMutator.showDescription).toBeCalledTimes(1)
+        expect(mockedMutator.showBoardDescription).toBeCalledTimes(1)
     })
 
     test('hide description', async () => {
-        board.fields.showDescription = false
+        board.showDescription = false
         let container
         await act(async () => {
             const result = render(wrapIntl(
@@ -106,11 +132,11 @@ describe('components/viewTitle', () => {
         expect(container).toMatchSnapshot()
         const showDescriptionButton = screen.getAllByRole('button')[0]
         userEvent.click(showDescriptionButton)
-        expect(mockedMutator.showDescription).toBeCalledTimes(1)
+        expect(mockedMutator.showBoardDescription).toBeCalledTimes(1)
     })
 
     test('add random icon', async () => {
-        board.fields.icon = ''
+        board.icon = ''
         let container
         await act(async () => {
             const result = render(wrapIntl(
@@ -126,7 +152,7 @@ describe('components/viewTitle', () => {
         expect(container).toMatchSnapshot()
         const randomIconButton = screen.getAllByRole('button')[0]
         userEvent.click(randomIconButton)
-        expect(mockedMutator.changeIcon).toBeCalledTimes(1)
+        expect(mockedMutator.changeBoardIcon).toBeCalledTimes(1)
     })
 
     test('change title', async () => {
@@ -143,24 +169,6 @@ describe('components/viewTitle', () => {
         const titleInput = screen.getAllByRole('textbox')[0]
         userEvent.type(titleInput, 'other title')
         fireEvent.blur(titleInput)
-        expect(mockedMutator.changeTitle).toBeCalledTimes(1)
-    })
-
-    test('change description', async () => {
-        board.fields.showDescription = true
-        await act(async () => {
-            render(wrapIntl(
-                <ReduxProvider store={store}>
-                    <ViewTitle
-                        board={board}
-                        readonly={false}
-                    />
-                </ReduxProvider>,
-            ))
-        })
-        const descriptionInput = screen.getAllByRole('textbox', {hidden: true})[2]
-        userEvent.type(descriptionInput, 'other description')
-        fireEvent.blur(descriptionInput)
-        expect(mockedMutator.changeDescription).toBeCalledTimes(1)
+        expect(mockedMutator.changeBoardTitle).toBeCalledTimes(1)
     })
 })

@@ -3,12 +3,13 @@
 import React from 'react'
 import {render, screen, within} from '@testing-library/react'
 import '@testing-library/jest-dom'
+import {MemoryRouter} from 'react-router-dom'
 
 import {Provider as ReduxProvider} from 'react-redux'
 
 import userEvent from '@testing-library/user-event'
 
-import {mocked} from 'ts-jest/utils'
+import {mocked} from 'jest-mock'
 
 import Mutator from '../../mutator'
 import {Utils} from '../../utils'
@@ -49,9 +50,27 @@ describe('src/components/kanban/kanbanCard', () => {
         cards: {
             cards: [card],
         },
+        teams: {
+            current: {id: 'team-id'},
+        },
+        boards: {
+            current: 'board_id_1',
+            boards: {
+                board_id_1: {id: 'board_id_1'},
+            },
+            myBoardMemberships: {
+                board_id_1: {userId: 'user_id_1', schemeAdmin: true},
+            },
+        },
         contents: {},
         comments: {
             comments: {},
+        },
+        users: {
+            me: {
+                id: 'user_id_1',
+                props: {},
+            },
         },
     }
     const store = mockStateStore([], state)
@@ -63,6 +82,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     card={card}
                     board={board}
                     visiblePropertyTemplates={[propertyTemplate]}
+                    visibleBadges={false}
                     isSelected={false}
                     readonly={false}
                     onDrop={jest.fn()}
@@ -70,7 +90,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     isManualSort={false}
                 />
             </ReduxProvider>,
-        ))
+        ), {wrapper: MemoryRouter})
         expect(container).toMatchSnapshot()
     })
     test('should match snapshot with readonly', () => {
@@ -80,6 +100,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     card={card}
                     board={board}
                     visiblePropertyTemplates={[propertyTemplate]}
+                    visibleBadges={false}
                     isSelected={false}
                     readonly={true}
                     onDrop={jest.fn()}
@@ -87,16 +108,17 @@ describe('src/components/kanban/kanbanCard', () => {
                     isManualSort={false}
                 />
             </ReduxProvider>,
-        ))
+        ), {wrapper: MemoryRouter})
         expect(container).toMatchSnapshot()
     })
     test('return kanbanCard and click on delete menu ', () => {
-        const {container} = render(wrapDNDIntl(
+        const result = render(wrapDNDIntl(
             <ReduxProvider store={store}>
                 <KanbanCard
                     card={card}
                     board={board}
                     visiblePropertyTemplates={[propertyTemplate]}
+                    visibleBadges={false}
                     isSelected={false}
                     readonly={false}
                     onDrop={jest.fn()}
@@ -104,7 +126,10 @@ describe('src/components/kanban/kanbanCard', () => {
                     isManualSort={false}
                 />
             </ReduxProvider>,
-        ))
+        ), {wrapper: MemoryRouter})
+
+        const {container} = result
+
         const elementMenuWrapper = screen.getByRole('button', {name: 'menuwrapper'})
         expect(elementMenuWrapper).not.toBeNull()
         userEvent.click(elementMenuWrapper)
@@ -112,8 +137,16 @@ describe('src/components/kanban/kanbanCard', () => {
         const elementButtonDelete = within(elementMenuWrapper).getByRole('button', {name: 'Delete'})
         expect(elementButtonDelete).not.toBeNull()
         userEvent.click(elementButtonDelete)
+
+        const confirmDialog = screen.getByTitle('Confirmation Dialog Box')
+        expect(confirmDialog).toBeDefined()
+        const confirmButton = within(confirmDialog).getByRole('button', {name: 'Delete'})
+        expect(confirmButton).toBeDefined()
+        userEvent.click(confirmButton)
+
         expect(mockedMutator.deleteBlock).toBeCalledWith(card, 'delete card')
     })
+
     test('return kanbanCard and click on duplicate menu ', () => {
         const {container} = render(wrapDNDIntl(
             <ReduxProvider store={store}>
@@ -121,6 +154,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     card={card}
                     board={board}
                     visiblePropertyTemplates={[propertyTemplate]}
+                    visibleBadges={false}
                     isSelected={false}
                     readonly={false}
                     onDrop={jest.fn()}
@@ -128,7 +162,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     isManualSort={false}
                 />
             </ReduxProvider>,
-        ))
+        ), {wrapper: MemoryRouter})
         const elementMenuWrapper = screen.getByRole('button', {name: 'menuwrapper'})
         expect(elementMenuWrapper).not.toBeNull()
         userEvent.click(elementMenuWrapper)
@@ -146,6 +180,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     card={card}
                     board={board}
                     visiblePropertyTemplates={[propertyTemplate]}
+                    visibleBadges={false}
                     isSelected={false}
                     readonly={false}
                     onDrop={jest.fn()}
@@ -153,7 +188,7 @@ describe('src/components/kanban/kanbanCard', () => {
                     isManualSort={false}
                 />
             </ReduxProvider>,
-        ))
+        ), {wrapper: MemoryRouter})
         const elementMenuWrapper = screen.getByRole('button', {name: 'menuwrapper'})
         expect(elementMenuWrapper).not.toBeNull()
         userEvent.click(elementMenuWrapper)

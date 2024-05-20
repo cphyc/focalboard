@@ -10,7 +10,7 @@ import HelpIcon from '../widgets/icons/help'
 import {Utils} from '../utils'
 import {Constants} from '../constants'
 
-const TopBar = React.memo((): JSX.Element => {
+const TopBar = (): JSX.Element => {
     if (Utils.isFocalboardPlugin()) {
         const feedbackUrl = 'https://www.focalboard.com/fwlink/feedback-boards.html?v=' + Constants.versionString
         return (
@@ -25,14 +25,16 @@ const TopBar = React.memo((): JSX.Element => {
                 >
                     <FormattedMessage
                         id='TopBar.give-feedback'
-                        defaultMessage='Give Feedback'
+                        defaultMessage='Give feedback'
                     />
                 </a>
                 <div className='versionFrame'>
-                    <div className='version'>
+                    <div
+                        className='version'
+                        title={`v${Constants.versionString}`}
+                    >
                         {`v${Constants.versionString}`}
                     </div>
-                    <div className='versionBadge'>{'BETA'}</div>
                 </div>
             </div>
         )
@@ -51,7 +53,7 @@ const TopBar = React.memo((): JSX.Element => {
             >
                 <FormattedMessage
                     id='TopBar.give-feedback'
-                    defaultMessage='Give Feedback'
+                    defaultMessage='Give feedback'
                 />
             </a>
             <a
@@ -63,6 +65,6 @@ const TopBar = React.memo((): JSX.Element => {
             </a>
         </div>
     )
-})
+}
 
-export default TopBar
+export default React.memo(TopBar)

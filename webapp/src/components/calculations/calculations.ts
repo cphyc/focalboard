@@ -9,7 +9,7 @@ import {Card} from '../../blocks/card'
 import {IPropertyTemplate} from '../../blocks/board'
 import {Utils} from '../../utils'
 import {Constants} from '../../constants'
-import {DateProperty} from '../properties/dateRange/dateRange'
+import {DateProperty} from '../../properties/date/date'
 
 const ROUNDED_DECIMAL_PLACES = 2
 
@@ -57,6 +57,7 @@ function countEmpty(cards: readonly Card[], property: IPropertyTemplate): string
     return String(cards.length - cardsWithValue(cards, property).length)
 }
 
+// return count of card which have this property value as not null \\ undefined \\ ''
 function countNotEmpty(cards: readonly Card[], property: IPropertyTemplate): string {
     return String(cardsWithValue(cards, property).length)
 }

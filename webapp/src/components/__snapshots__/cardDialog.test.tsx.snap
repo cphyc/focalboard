@@ -1,35 +1,528 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components/cardDialog return a cardDialog readonly 1`] = `
+exports[`components/cardDialog already following card 1`] = `
 <div>
   <div
-    class="Dialog dialog-back undefined"
+    class="Dialog dialog-back cardDialog size--medium"
   >
+    <div
+      class="backdrop"
+    />
     <div
       class="wrapper"
     >
       <div
         class="dialog"
+        role="dialog"
       >
         <div
           class="toolbar"
         >
-          <button
-            aria-label="Close dialog"
-            class="Button IconButton IconButton--large"
-            title="Close dialog"
-            type="button"
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
+          <div
+            class="toolbar--right"
           >
-            <i
-              class="CompassIcon icon-close CloseIcon"
-            />
-          </button>
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+              <button
+                type="button"
+              >
+                <span>
+                  Following
+                </span>
+              </button>
+            </div>
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-dots-horizontal OptionsIcon"
+                />
+              </button>
+            </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
+          </div>
         </div>
         <div
-          class="CardDetail content"
+          class="CardDetail "
         >
           <div
-            class="BlockIconSelector"
+            class="IconSelector"
+          >
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <div
+                class="octo-icon size-l"
+              >
+                <span>
+                  i
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="EditableAreaWrap"
+          >
+            <textarea
+              class="EditableArea Editable title"
+              height="0"
+              placeholder="Untitled"
+              rows="1"
+              spellcheck="true"
+              title="title"
+            >
+              title
+            </textarea>
+            <div
+              class="EditableAreaContainer"
+            >
+              <textarea
+                aria-hidden="true"
+                class="EditableAreaReference Editable title"
+                dir="auto"
+                disabled=""
+                rows="1"
+              >
+                title
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="octo-propertylist CardDetailProperties"
+          >
+            <div
+              class="octo-propertyname add-property"
+            >
+              <div
+                aria-label="menuwrapper"
+                class="MenuWrapper"
+                role="button"
+              >
+                <button
+                  type="button"
+                >
+                  <span>
+                    + Add a property
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="CommentsList"
+          >
+            <div
+              class="CommentsList__new"
+            >
+              <img
+                class="comment-avatar"
+              />
+              <div
+                class="MarkdownEditor octo-editor newcomment "
+              >
+                <div
+                  class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
+                />
+              </div>
+              
+            </div>
+            <hr
+              class="CommentsList__divider"
+            />
+          </div>
+        </div>
+        <div
+          class="CardDetail CardDetail--fullwidth content-blocks"
+        >
+          <div
+            class="octo-content CardDetailContents"
+          >
+            <div
+              class="octo-block"
+            >
+              <div
+                class="octo-block-margin"
+              />
+              <div
+                class="MarkdownEditor octo-editor  "
+              >
+                <div
+                  class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="CardDetailContentsMenu content add-content"
+          >
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <span>
+                  Add content
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/cardDialog limited card shows hidden view (no toolbar) 1`] = `
+<div>
+  <div
+    class="Dialog dialog-back cardDialog size--medium"
+  >
+    <div
+      class="backdrop"
+    />
+    <div
+      class="wrapper"
+    >
+      <div
+        class="dialog"
+        role="dialog"
+      >
+        <div
+          class="toolbar"
+        >
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
+          <div
+            class="toolbar--right"
+          >
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+            </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="CardDetail  CardDetail--is-limited"
+        >
+          <div
+            class="IconSelector"
+          >
+            <div
+              class="octo-icon size-l readonly"
+            >
+              <span>
+                i
+              </span>
+            </div>
+          </div>
+          <div
+            class="EditableAreaWrap"
+          >
+            <textarea
+              class="EditableArea Editable readonly title"
+              height="0"
+              placeholder="Untitled"
+              readonly=""
+              rows="1"
+              spellcheck="true"
+              title="title"
+            >
+              title
+            </textarea>
+            <div
+              class="EditableAreaContainer"
+            >
+              <textarea
+                aria-hidden="true"
+                class="EditableAreaReference Editable readonly title"
+                dir="auto"
+                disabled=""
+                rows="1"
+              >
+                title
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="CardDetail__limited-wrapper"
+          >
+            <span
+              class="CardDetail__limited-bg"
+            >
+              <svg
+                fill="none"
+                height="521"
+                viewBox="0 0 468 521"
+                width="468"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="156"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="296"
+                  x="172"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="156"
+                  y="48"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="296"
+                  x="172"
+                  y="48"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="156"
+                  y="96"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="296"
+                  x="172"
+                  y="96"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="156"
+                  y="144"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="296"
+                  x="172"
+                  y="144"
+                />
+                <rect
+                  fill="#3D3C40"
+                  fill-opacity="0.16"
+                  height="1"
+                  width="468"
+                  y="192"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="468"
+                  y="209"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="32"
+                  rx="4"
+                  width="468"
+                  y="257"
+                />
+                <rect
+                  fill="#3D3C40"
+                  fill-opacity="0.16"
+                  height="1"
+                  width="468"
+                  y="305"
+                />
+                <rect
+                  fill="#3F4350"
+                  fill-opacity="0.08"
+                  height="199"
+                  rx="4"
+                  width="468"
+                  y="322"
+                />
+              </svg>
+            </span>
+            <p
+              class="CardDetail__limited-title"
+            >
+              This card is hidden
+            </p>
+            <p
+              class="CardDetail__limited-body"
+            >
+              Upgrade to our Professional or Enterprise plan to view archived cards, have unlimited views per boards, unlimited cards and more.
+              <br />
+              <a
+                class="CardDetail__limited-link"
+                role="button"
+              >
+                Learn more about our plans.
+              </a>
+            </p>
+            <button
+              type="button"
+            >
+              <span>
+                Upgrade
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/cardDialog return a cardDialog readonly 1`] = `
+<div>
+  <div
+    class="Dialog dialog-back cardDialog size--medium"
+  >
+    <div
+      class="backdrop"
+    />
+    <div
+      class="wrapper"
+    >
+      <div
+        class="dialog"
+        role="dialog"
+      >
+        <div
+          class="toolbar"
+        >
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
+          <div
+            class="toolbar--right"
+          >
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+              <button
+                type="button"
+              >
+                <span>
+                  Follow
+                </span>
+              </button>
+            </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="CardDetail "
+        >
+          <div
+            class="IconSelector"
           >
             <div
               class="octo-icon size-l readonly"
@@ -76,7 +569,7 @@ exports[`components/cardDialog return a cardDialog readonly 1`] = `
           />
         </div>
         <div
-          class="CardDetail content fullwidth content-blocks"
+          class="CardDetail CardDetail--fullwidth content-blocks"
         >
           <div
             class="octo-content CardDetailContents"
@@ -99,140 +592,218 @@ exports[`components/cardDialog return a cardDialog readonly 1`] = `
 exports[`components/cardDialog return cardDialog menu content 1`] = `
 <div>
   <div
-    class="Dialog dialog-back undefined"
+    class="Dialog dialog-back cardDialog size--medium"
   >
+    <div
+      class="backdrop"
+    />
     <div
       class="wrapper"
     >
       <div
         class="dialog"
+        role="dialog"
       >
         <div
           class="toolbar"
         >
-          <button
-            aria-label="Close dialog"
-            class="Button IconButton IconButton--large"
-            title="Close dialog"
-            type="button"
-          >
-            <i
-              class="CompassIcon icon-close CloseIcon"
-            />
-          </button>
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
           <div
-            aria-label="menuwrapper"
-            class="MenuWrapper"
-            role="button"
+            class="toolbar--right"
           >
-            <button
-              class="Button IconButton IconButton--large"
-              type="button"
-            >
-              <i
-                class="CompassIcon icon-dots-horizontal OptionsIcon"
-              />
-            </button>
             <div
-              class="Menu noselect left"
+              class="d-flex"
             >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+              <button
+                type="button"
+              >
+                <span>
+                  Follow
+                </span>
+              </button>
+            </div>
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper override menuOpened"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-dots-horizontal OptionsIcon"
+                />
+              </button>
               <div
-                class="menu-contents"
+                class="Menu noselect left "
               >
                 <div
-                  class="menu-options"
+                  class="menu-contents"
                 >
                   <div
-                    aria-label="Delete"
-                    class="MenuOption TextOption menu-option"
-                    role="button"
+                    class="menu-options"
                   >
-                    <svg
-                      class="DeleteIcon Icon"
-                      viewBox="0 0 448 512"
-                      xmlns="http://www.w3.org/2000/svg"
+                    <div>
+                      <div
+                        aria-label="Delete"
+                        class="MenuOption TextOption menu-option"
+                        role="button"
+                      >
+                        <div
+                          class="d-flex"
+                        >
+                          <div
+                            class="menu-option__icon"
+                          >
+                            <i
+                              class="CompassIcon icon-trash-can-outline DeleteIcon trash-can-outline"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="menu-option__content"
+                        >
+                          <div
+                            class="menu-name"
+                          >
+                            Delete
+                          </div>
+                        </div>
+                        <div
+                          class="noicon"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        aria-label="Copy link"
+                        class="MenuOption TextOption menu-option"
+                        role="button"
+                      >
+                        <div
+                          class="d-flex"
+                        >
+                          <div
+                            class="menu-option__icon"
+                          >
+                            <i
+                              class="CompassIcon icon-link-variant LinkIcon"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="menu-option__content"
+                        >
+                          <div
+                            class="menu-name"
+                          >
+                            Copy link
+                          </div>
+                        </div>
+                        <div
+                          class="noicon"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        aria-label="New template from card"
+                        class="MenuOption TextOption menu-option"
+                        role="button"
+                      >
+                        <div
+                          class="d-flex"
+                        >
+                          <div
+                            class="menu-option__icon"
+                          >
+                            <i
+                              class="CompassIcon icon-plus"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="menu-option__content"
+                        >
+                          <div
+                            class="menu-name"
+                          >
+                            New template from card
+                          </div>
+                        </div>
+                        <div
+                          class="noicon"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="menu-spacer hideOnWidescreen"
+                  />
+                  <div
+                    class="menu-options hideOnWidescreen"
+                  >
+                    <div
+                      aria-label="Cancel"
+                      class="MenuOption TextOption menu-option menu-cancel"
+                      role="button"
                     >
-                      <path
-                        d="M268 416h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12zM432 80h-82.41l-34-56.7A48 48 0 0 0 274.41 0H173.59a48 48 0 0 0-41.16 23.3L98.41 80H16A16 16 0 0 0 0 96v16a16 16 0 0 0 16 16h16v336a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128h16a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16zM171.84 50.91A6 6 0 0 1 177 48h94a6 6 0 0 1 5.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0 0 12-12V188a12 12 0 0 0-12-12h-24a12 12 0 0 0-12 12v216a12 12 0 0 0 12 12z"
+                      <div
+                        class="d-flex"
+                      >
+                        <div
+                          class="noicon"
+                        />
+                      </div>
+                      <div
+                        class="menu-option__content"
+                      >
+                        <div
+                          class="menu-name"
+                        >
+                          Cancel
+                        </div>
+                      </div>
+                      <div
+                        class="noicon"
                       />
-                    </svg>
-                    <div
-                      class="menu-name"
-                    >
-                      Delete
                     </div>
-                    <div
-                      class="noicon"
-                    />
-                  </div>
-                  <div
-                    aria-label="Copy link"
-                    class="MenuOption TextOption menu-option"
-                    role="button"
-                  >
-                    <i
-                      class="CompassIcon icon-link-variant LinkIcon"
-                    />
-                    <div
-                      class="menu-name"
-                    >
-                      Copy link
-                    </div>
-                    <div
-                      class="noicon"
-                    />
-                  </div>
-                  <div
-                    aria-label="New template from card"
-                    class="MenuOption TextOption menu-option"
-                    role="button"
-                  >
-                    <div
-                      class="noicon"
-                    />
-                    <div
-                      class="menu-name"
-                    >
-                      New template from card
-                    </div>
-                    <div
-                      class="noicon"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="menu-spacer hideOnWidescreen"
-                />
-                <div
-                  class="menu-options hideOnWidescreen"
-                >
-                  <div
-                    aria-label="Cancel"
-                    class="MenuOption TextOption menu-option menu-cancel"
-                    role="button"
-                  >
-                    <div
-                      class="noicon"
-                    />
-                    <div
-                      class="menu-name"
-                    >
-                      Cancel
-                    </div>
-                    <div
-                      class="noicon"
-                    />
                   </div>
                 </div>
               </div>
             </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
           </div>
         </div>
         <div
-          class="CardDetail content"
+          class="CardDetail "
         >
           <div
-            class="BlockIconSelector"
+            class="IconSelector"
           >
             <div
               aria-label="menuwrapper"
@@ -301,247 +872,28 @@ exports[`components/cardDialog return cardDialog menu content 1`] = `
             class="CommentsList"
           >
             <div
-              class="commentrow"
+              class="CommentsList__new"
             >
               <img
                 class="comment-avatar"
-                src="data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\" style=\\"fill: rgb(192, 192, 192);\\"><rect width=\\"100\\" height=\\"100\\" /></svg>"
               />
               <div
                 class="MarkdownEditor octo-editor newcomment "
               >
                 <div
                   class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
                 />
-                <div
-                  class="octo-editor-active Editor"
-                  style="visibility: hidden; position: absolute; top: 0px; left: 0px;"
-                >
-                  <div
-                    id="test-id-wrapper"
-                  >
-                    <textarea
-                      id="test-id"
-                      style="display: none;"
-                    />
-                    <div
-                      class="EasyMDEContainer"
-                    >
-                      <div
-                        class="CodeMirror cm-s-easymde CodeMirror-wrap"
-                      >
-                        <div
-                          style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-                        >
-                          <textarea
-                            autocapitalize="off"
-                            autocorrect="off"
-                            spellcheck="false"
-                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                            tabindex="0"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-vscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="min-width: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-hscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="height: 100%; min-height: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-scrollbar-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-gutter-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-scroll"
-                          style="min-height: 10px;"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="CodeMirror-sizer"
-                            style="margin-left: 0px;"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <div
-                                class="CodeMirror-lines"
-                                role="presentation"
-                              >
-                                <div
-                                  role="presentation"
-                                  style="position: relative; outline: none;"
-                                >
-                                  <div
-                                    class="CodeMirror-measure"
-                                  >
-                                    <pre
-                                      class="CodeMirror-line-like"
-                                    >
-                                      <span>
-                                        xxxxxxxxxx
-                                      </span>
-                                    </pre>
-                                  </div>
-                                  <div
-                                    class="CodeMirror-measure"
-                                  />
-                                  <div
-                                    style="position: relative; z-index: 1;"
-                                  />
-                                  <div
-                                    class="CodeMirror-cursors"
-                                  />
-                                  <div
-                                    class="CodeMirror-code"
-                                    role="presentation"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style="position: absolute; height: 50px; width: 1px;"
-                          />
-                          <div
-                            class="CodeMirror-gutters"
-                            style="display: none;"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="editor-preview-side editor-preview"
-                      />
-                    </div>
-                    <div
-                      class="EasyMDEContainer"
-                    >
-                      <div
-                        class="CodeMirror cm-s-easymde CodeMirror-wrap"
-                      >
-                        <div
-                          style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-                        >
-                          <textarea
-                            autocapitalize="off"
-                            autocorrect="off"
-                            spellcheck="false"
-                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                            tabindex="0"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-vscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="min-width: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-hscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="height: 100%; min-height: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-scrollbar-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-gutter-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-scroll"
-                          style="min-height: 10px;"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="CodeMirror-sizer"
-                            style="margin-left: 0px;"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <div
-                                class="CodeMirror-lines"
-                                role="presentation"
-                              >
-                                <div
-                                  role="presentation"
-                                  style="position: relative; outline: none;"
-                                >
-                                  <div
-                                    class="CodeMirror-measure"
-                                  >
-                                    <pre
-                                      class="CodeMirror-line-like"
-                                    >
-                                      <span>
-                                        xxxxxxxxxx
-                                      </span>
-                                    </pre>
-                                  </div>
-                                  <div
-                                    class="CodeMirror-measure"
-                                  />
-                                  <div
-                                    style="position: relative; z-index: 1;"
-                                  />
-                                  <div
-                                    class="CodeMirror-cursors"
-                                  />
-                                  <div
-                                    class="CodeMirror-code"
-                                    role="presentation"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style="position: absolute; height: 50px; width: 1px;"
-                          />
-                          <div
-                            class="CodeMirror-gutters"
-                            style="display: none;"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="editor-preview-side editor-preview"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
               
             </div>
-            <hr />
+            <hr
+              class="CommentsList__divider"
+            />
           </div>
         </div>
         <div
-          class="CardDetail content fullwidth content-blocks"
+          class="CardDetail CardDetail--fullwidth content-blocks"
         >
           <div
             class="octo-content CardDetailContents"
@@ -557,20 +909,220 @@ exports[`components/cardDialog return cardDialog menu content 1`] = `
               >
                 <div
                   class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
                 />
-                <div
-                  class="octo-editor-active Editor"
-                  style="visibility: hidden; position: absolute; top: 0px; left: 0px;"
+              </div>
+            </div>
+          </div>
+          <div
+            class="CardDetailContentsMenu content add-content"
+          >
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <span>
+                  Add content
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/cardDialog return cardDialog menu content and cancel delete confirmation do nothing 1`] = `
+<div>
+  <div
+    class="Dialog dialog-back cardDialog size--medium"
+  >
+    <div
+      class="backdrop"
+    />
+    <div
+      class="wrapper"
+    >
+      <div
+        class="dialog"
+        role="dialog"
+      >
+        <div
+          class="toolbar"
+        >
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
+          <div
+            class="toolbar--right"
+          >
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+              <button
+                type="button"
+              >
+                <span>
+                  Follow
+                </span>
+              </button>
+            </div>
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-dots-horizontal OptionsIcon"
+                />
+              </button>
+            </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="CardDetail "
+        >
+          <div
+            class="IconSelector"
+          >
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <div
+                class="octo-icon size-l"
+              >
+                <span>
+                  i
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="EditableAreaWrap"
+          >
+            <textarea
+              class="EditableArea Editable title"
+              height="0"
+              placeholder="Untitled"
+              rows="1"
+              spellcheck="true"
+              title="title"
+            >
+              title
+            </textarea>
+            <div
+              class="EditableAreaContainer"
+            >
+              <textarea
+                aria-hidden="true"
+                class="EditableAreaReference Editable title"
+                dir="auto"
+                disabled=""
+                rows="1"
+              >
+                title
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="octo-propertylist CardDetailProperties"
+          >
+            <div
+              class="octo-propertyname add-property"
+            >
+              <div
+                aria-label="menuwrapper"
+                class="MenuWrapper"
+                role="button"
+              >
+                <button
+                  type="button"
                 >
-                  <div
-                    id="test-id-wrapper"
-                  >
-                    <textarea
-                      id="test-id"
-                      style="display: none;"
-                    />
-                  </div>
-                </div>
+                  <span>
+                    + Add a property
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div
+            class="CommentsList"
+          >
+            <div
+              class="CommentsList__new"
+            >
+              <img
+                class="comment-avatar"
+              />
+              <div
+                class="MarkdownEditor octo-editor newcomment "
+              >
+                <div
+                  class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
+                />
+              </div>
+              
+            </div>
+            <hr
+              class="CommentsList__divider"
+            />
+          </div>
+        </div>
+        <div
+          class="CardDetail CardDetail--fullwidth content-blocks"
+        >
+          <div
+            class="octo-content CardDetailContents"
+          >
+            <div
+              class="octo-block"
+            >
+              <div
+                class="octo-block-margin"
+              />
+              <div
+                class="MarkdownEditor octo-editor  "
+              >
+                <div
+                  class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
+                />
               </div>
             </div>
           </div>
@@ -601,47 +1153,81 @@ exports[`components/cardDialog return cardDialog menu content 1`] = `
 exports[`components/cardDialog should match snapshot 1`] = `
 <div>
   <div
-    class="Dialog dialog-back undefined"
+    class="Dialog dialog-back cardDialog size--medium"
   >
+    <div
+      class="backdrop"
+    />
     <div
       class="wrapper"
     >
       <div
         class="dialog"
+        role="dialog"
       >
         <div
           class="toolbar"
         >
-          <button
-            aria-label="Close dialog"
-            class="Button IconButton IconButton--large"
-            title="Close dialog"
-            type="button"
-          >
-            <i
-              class="CompassIcon icon-close CloseIcon"
-            />
-          </button>
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
           <div
-            aria-label="menuwrapper"
-            class="MenuWrapper"
-            role="button"
+            class="toolbar--right"
           >
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-paperclip"
+                />
+                <span>
+                  Attach
+                </span>
+              </button>
+              <button
+                type="button"
+              >
+                <span>
+                  Follow
+                </span>
+              </button>
+            </div>
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-dots-horizontal OptionsIcon"
+                />
+              </button>
+            </div>
             <button
-              class="Button IconButton IconButton--large"
+              aria-label="Close dialog"
+              title="Close dialog"
               type="button"
             >
               <i
-                class="CompassIcon icon-dots-horizontal OptionsIcon"
+                class="CompassIcon icon-close CloseIcon"
               />
             </button>
           </div>
         </div>
         <div
-          class="CardDetail content"
+          class="CardDetail "
         >
           <div
-            class="BlockIconSelector"
+            class="IconSelector"
           >
             <div
               aria-label="menuwrapper"
@@ -710,247 +1296,28 @@ exports[`components/cardDialog should match snapshot 1`] = `
             class="CommentsList"
           >
             <div
-              class="commentrow"
+              class="CommentsList__new"
             >
               <img
                 class="comment-avatar"
-                src="data:image/svg+xml,<svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\" style=\\"fill: rgb(192, 192, 192);\\"><rect width=\\"100\\" height=\\"100\\" /></svg>"
               />
               <div
                 class="MarkdownEditor octo-editor newcomment "
               >
                 <div
                   class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
                 />
-                <div
-                  class="octo-editor-active Editor"
-                  style="visibility: hidden; position: absolute; top: 0px; left: 0px;"
-                >
-                  <div
-                    id="test-id-wrapper"
-                  >
-                    <textarea
-                      id="test-id"
-                      style="display: none;"
-                    />
-                    <div
-                      class="EasyMDEContainer"
-                    >
-                      <div
-                        class="CodeMirror cm-s-easymde CodeMirror-wrap"
-                      >
-                        <div
-                          style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-                        >
-                          <textarea
-                            autocapitalize="off"
-                            autocorrect="off"
-                            spellcheck="false"
-                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                            tabindex="0"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-vscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="min-width: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-hscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="height: 100%; min-height: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-scrollbar-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-gutter-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-scroll"
-                          style="min-height: 10px;"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="CodeMirror-sizer"
-                            style="margin-left: 0px;"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <div
-                                class="CodeMirror-lines"
-                                role="presentation"
-                              >
-                                <div
-                                  role="presentation"
-                                  style="position: relative; outline: none;"
-                                >
-                                  <div
-                                    class="CodeMirror-measure"
-                                  >
-                                    <pre
-                                      class="CodeMirror-line-like"
-                                    >
-                                      <span>
-                                        xxxxxxxxxx
-                                      </span>
-                                    </pre>
-                                  </div>
-                                  <div
-                                    class="CodeMirror-measure"
-                                  />
-                                  <div
-                                    style="position: relative; z-index: 1;"
-                                  />
-                                  <div
-                                    class="CodeMirror-cursors"
-                                  />
-                                  <div
-                                    class="CodeMirror-code"
-                                    role="presentation"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style="position: absolute; height: 50px; width: 1px;"
-                          />
-                          <div
-                            class="CodeMirror-gutters"
-                            style="display: none;"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="editor-preview-side editor-preview"
-                      />
-                    </div>
-                    <div
-                      class="EasyMDEContainer"
-                    >
-                      <div
-                        class="CodeMirror cm-s-easymde CodeMirror-wrap"
-                      >
-                        <div
-                          style="overflow: hidden; position: relative; width: 3px; height: 0px;"
-                        >
-                          <textarea
-                            autocapitalize="off"
-                            autocorrect="off"
-                            spellcheck="false"
-                            style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"
-                            tabindex="0"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-vscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="min-width: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-hscrollbar"
-                          cm-not-content="true"
-                          tabindex="-1"
-                        >
-                          <div
-                            style="height: 100%; min-height: 1px;"
-                          />
-                        </div>
-                        <div
-                          class="CodeMirror-scrollbar-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-gutter-filler"
-                          cm-not-content="true"
-                        />
-                        <div
-                          class="CodeMirror-scroll"
-                          style="min-height: 10px;"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="CodeMirror-sizer"
-                            style="margin-left: 0px;"
-                          >
-                            <div
-                              style="position: relative;"
-                            >
-                              <div
-                                class="CodeMirror-lines"
-                                role="presentation"
-                              >
-                                <div
-                                  role="presentation"
-                                  style="position: relative; outline: none;"
-                                >
-                                  <div
-                                    class="CodeMirror-measure"
-                                  >
-                                    <pre
-                                      class="CodeMirror-line-like"
-                                    >
-                                      <span>
-                                        xxxxxxxxxx
-                                      </span>
-                                    </pre>
-                                  </div>
-                                  <div
-                                    class="CodeMirror-measure"
-                                  />
-                                  <div
-                                    style="position: relative; z-index: 1;"
-                                  />
-                                  <div
-                                    class="CodeMirror-cursors"
-                                  />
-                                  <div
-                                    class="CodeMirror-code"
-                                    role="presentation"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style="position: absolute; height: 50px; width: 1px;"
-                          />
-                          <div
-                            class="CodeMirror-gutters"
-                            style="display: none;"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="editor-preview-side editor-preview"
-                      />
-                    </div>
-                  </div>
-                </div>
               </div>
               
             </div>
-            <hr />
+            <hr
+              class="CommentsList__divider"
+            />
           </div>
         </div>
         <div
-          class="CardDetail content fullwidth content-blocks"
+          class="CardDetail CardDetail--fullwidth content-blocks"
         >
           <div
             class="octo-content CardDetailContents"
@@ -966,20 +1333,8 @@ exports[`components/cardDialog should match snapshot 1`] = `
               >
                 <div
                   class="octo-editor-preview octo-placeholder"
+                  data-testid="preview-element"
                 />
-                <div
-                  class="octo-editor-active Editor"
-                  style="visibility: hidden; position: absolute; top: 0px; left: 0px;"
-                >
-                  <div
-                    id="test-id-wrapper"
-                  >
-                    <textarea
-                      id="test-id"
-                      style="display: none;"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -998,6 +1353,140 @@ exports[`components/cardDialog should match snapshot 1`] = `
                   Add content
                 </span>
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`components/cardDialog should match snapshot without permissions 1`] = `
+<div>
+  <div
+    class="Dialog dialog-back cardDialog size--medium"
+  >
+    <div
+      class="backdrop"
+    />
+    <div
+      class="wrapper"
+    >
+      <div
+        class="dialog"
+        role="dialog"
+      >
+        <div
+          class="toolbar"
+        >
+          <div>
+            <h1
+              class="dialog-title"
+            >
+              <div />
+            </h1>
+          </div>
+          <div
+            class="toolbar--right"
+          >
+            <div
+              class="d-flex"
+            >
+              <button
+                type="button"
+              >
+                <span>
+                  Follow
+                </span>
+              </button>
+            </div>
+            <div
+              aria-label="menuwrapper"
+              class="MenuWrapper"
+              role="button"
+            >
+              <button
+                type="button"
+              >
+                <i
+                  class="CompassIcon icon-dots-horizontal OptionsIcon"
+                />
+              </button>
+            </div>
+            <button
+              aria-label="Close dialog"
+              title="Close dialog"
+              type="button"
+            >
+              <i
+                class="CompassIcon icon-close CloseIcon"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="CardDetail "
+        >
+          <div
+            class="IconSelector"
+          >
+            <div
+              class="octo-icon size-l readonly"
+            >
+              <span>
+                i
+              </span>
+            </div>
+          </div>
+          <div
+            class="EditableAreaWrap"
+          >
+            <textarea
+              class="EditableArea Editable readonly title"
+              height="0"
+              placeholder="Untitled"
+              readonly=""
+              rows="1"
+              spellcheck="true"
+              title="title"
+            >
+              title
+            </textarea>
+            <div
+              class="EditableAreaContainer"
+            >
+              <textarea
+                aria-hidden="true"
+                class="EditableAreaReference Editable readonly title"
+                dir="auto"
+                disabled=""
+                rows="1"
+              >
+                title
+              </textarea>
+            </div>
+          </div>
+          <div
+            class="octo-propertylist CardDetailProperties"
+          />
+          <hr />
+          <div
+            class="CommentsList"
+          />
+        </div>
+        <div
+          class="CardDetail CardDetail--fullwidth content-blocks"
+        >
+          <div
+            class="octo-content CardDetailContents"
+          >
+            <div
+              class="octo-block"
+            >
+              <div
+                class="octo-block-margin"
+              />
             </div>
           </div>
         </div>
